@@ -14,6 +14,7 @@
 		450106291EDBBF4500AA7A17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 450106271EDBBF4500AA7A17 /* LaunchScreen.storyboard */; };
 		450106321EDBC54600AA7A17 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450106311EDBC54600AA7A17 /* MapKit.framework */; };
 		450106341EDBC62500AA7A17 /* MJHomeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */; };
+		450106361EDBFF5500AA7A17 /* MJMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450106351EDBFF5500AA7A17 /* MJMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4501062A1EDBBF4500AA7A17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450106311EDBC54600AA7A17 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJHomeWebViewController.swift; sourceTree = "<group>"; };
+		450106351EDBFF5500AA7A17 /* MJMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				4501061E1EDBBF4500AA7A17 /* AppDelegate.swift */,
 				450106201EDBBF4500AA7A17 /* ViewController.swift */,
 				450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */,
+				450106351EDBFF5500AA7A17 /* MJMenuController.swift */,
 				450106221EDBBF4500AA7A17 /* Main.storyboard */,
 				450106251EDBBF4500AA7A17 /* Assets.xcassets */,
 				450106271EDBBF4500AA7A17 /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				450106211EDBBF4500AA7A17 /* ViewController.swift in Sources */,
+				450106361EDBFF5500AA7A17 /* MJMenuController.swift in Sources */,
 				4501061F1EDBBF4500AA7A17 /* AppDelegate.swift in Sources */,
 				450106341EDBC62500AA7A17 /* MJHomeWebViewController.swift in Sources */,
 			);
