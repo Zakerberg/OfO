@@ -20,11 +20,12 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
     @IBOutlet weak var panelView: UIView!
     /* 首页定位按钮 */
     @IBAction func LocationBtnClick(_ sender: UIButton) {
+        searchBikeNearBy()
     }
     
     //搜索周边的小黄车
     func searchBikeNearBy() {
-        
+        searchCustomerLocation(mapView.userLocation.coordinate)
     }
     
     func searchCustomerLocation(_ center:CLLocationCoordinate2D)  {
@@ -70,10 +71,35 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         }
         
 }
-//MARK: ------------ Map Search Delegate(搜索) ------------
+//MARK: ------------ MapView Delegate(自定义大头针) ------------
+     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+        /*** 用户定位的位置,不需要自定义   ***/
+        if annotation is MAUserLocation {
+           return nil
+        }
+        
+        let reuseid = "myid"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseid) as? MAPinAnnotationView
+    
+        if annotationView == nil {
+         annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: reuseid)
+        }
+        
+        if annotation.title == "正常可用" {
+            annotationView?.image = #imageLiteral(resourceName: "HomePage_nearbyBike")
+        } else {
+            annotationView?.image = #imageLiteral(resourceName: "HomePage_nearbyBikeRedPacket")
+        }
+  
+        annotationView?.canShowCallout = true
+        annotationView?.animatesDrop = true
+    
+        return annotationView
+    }
+    
+//MARK: ------------ Map Search Delegate(搜索) ------------------
     /***  搜索周边完成后的处理  ***/
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
-        
         guard response.count > 0 else {
             print("周边没有小黄车")
             return
@@ -87,7 +113,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
             
             annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees($0.location.latitude), longitude: CLLocationDegrees($0.location.longitude))
             
-            if $0.distance < 200 {
+            if $0.distance < 400 {
                 annotation.title = "红包车"
                 annotation.subtitle = "开锁骑行10分钟得现金红包"
             } else {
