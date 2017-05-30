@@ -27,8 +27,8 @@ class ViewController: UIViewController,MAMapViewDelegate {
         view.bringSubview(toFront: panelView)
         
         mapView.delegate = self
-        AMapServices.shared().enableHTTPS = true
-        
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
         
         self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "ofoLogo"))
         self.navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "leftTopImage").withRenderingMode(.alwaysOriginal)
