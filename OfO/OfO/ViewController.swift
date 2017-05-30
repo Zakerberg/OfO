@@ -10,6 +10,13 @@ import UIKit
 import SWRevealViewController
 
 class ViewController: UIViewController {
+    
+    /* 首页面板   */
+    @IBOutlet weak var panelView: UIView!
+    
+    /* 首页定位按钮  */
+    @IBAction func LocationBtnClick(_ sender: UIButton) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

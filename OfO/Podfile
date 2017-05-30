@@ -7,6 +7,11 @@ target 'OfO' do
 
   # Pods for OfO
 
-pod 'SWRevealViewController'
+ pod 'SWRevealViewController'
+ pod 'AMap3DMap'
+ pod 'AMapLocation'
+ pod 'AMapSearch'
+ pod 'AMapNavi'
+ pod 'FTIndicator'
 
 end
