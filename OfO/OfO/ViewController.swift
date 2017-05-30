@@ -9,17 +9,26 @@
 import UIKit
 import SWRevealViewController
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,MAMapViewDelegate {
+    
+    var mapView :MAMapView!
     
     /* 首页面板   */
     @IBOutlet weak var panelView: UIView!
-    
     /* 首页定位按钮  */
     @IBAction func LocationBtnClick(_ sender: UIButton) {
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView = MAMapView(frame: view.bounds)
+        view.addSubview(mapView)
+        view.bringSubview(toFront: panelView)
+        
+        mapView.delegate = self
+        AMapServices.shared().enableHTTPS = true
+        
         
         self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "ofoLogo"))
         self.navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "leftTopImage").withRenderingMode(.alwaysOriginal)

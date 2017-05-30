@@ -12,7 +12,6 @@
 		450106241EDBBF4500AA7A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 450106221EDBBF4500AA7A17 /* Main.storyboard */; };
 		450106261EDBBF4500AA7A17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 450106251EDBBF4500AA7A17 /* Assets.xcassets */; };
 		450106291EDBBF4500AA7A17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 450106271EDBBF4500AA7A17 /* LaunchScreen.storyboard */; };
-		450106321EDBC54600AA7A17 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450106311EDBC54600AA7A17 /* MapKit.framework */; };
 		450106341EDBC62500AA7A17 /* MJHomeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */; };
 		450106361EDBFF5500AA7A17 /* MJMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450106351EDBFF5500AA7A17 /* MJMenuController.swift */; };
 		8A535E41D2A11E1E73F584E1 /* Pods_OfO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E96F4199968277270EC3DB /* Pods_OfO.framework */; };
@@ -26,7 +25,6 @@
 		450106251EDBBF4500AA7A17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		450106281EDBBF4500AA7A17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4501062A1EDBBF4500AA7A17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		450106311EDBC54600AA7A17 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJHomeWebViewController.swift; sourceTree = "<group>"; };
 		450106351EDBFF5500AA7A17 /* MJMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMenuController.swift; sourceTree = "<group>"; };
 		45307E661EDD0D6800FBC98E /* OfO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfO-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -40,7 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				450106321EDBC54600AA7A17 /* MapKit.framework in Frameworks */,
 				8A535E41D2A11E1E73F584E1 /* Pods_OfO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,7 +82,6 @@
 		450106301EDBC54600AA7A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				450106311EDBC54600AA7A17 /* MapKit.framework */,
 				70E96F4199968277270EC3DB /* Pods_OfO.framework */,
 			);
 			name = Frameworks;
@@ -140,7 +136,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};

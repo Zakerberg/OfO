@@ -23,9 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dsH-JD-Y6X">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LsB-39-YeM" userLabel="Panel View">
                                 <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
                                 <subviews>
@@ -33,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="-0.5" width="375" height="166.5"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2re-di-3XH">
-                                        <rect key="frame" x="30" y="0.0" width="315" height="166.5"/>
+                                        <rect key="frame" x="30" y="-0.5" width="315" height="166.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-11-YO4">
                                                 <rect key="frame" x="0.0" y="56" width="40" height="54.5"/>
@@ -78,7 +75,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="T65-bh-DeX" firstAttribute="top" secondItem="LsB-39-YeM" secondAttribute="top" id="4rO-VX-1Co"/>
                                     <constraint firstAttribute="bottom" secondItem="T65-bh-DeX" secondAttribute="bottom" id="5JP-KV-O3b"/>
@@ -92,11 +89,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dsH-JD-Y6X" secondAttribute="trailing" id="37U-PF-mAJ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dsH-JD-Y6X" secondAttribute="bottom" id="3uq-tZ-U5v"/>
-                            <constraint firstItem="dsH-JD-Y6X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8z8-BL-fey"/>
                             <constraint firstItem="LsB-39-YeM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gnh-97-QQy"/>
-                            <constraint firstItem="dsH-JD-Y6X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aBU-qH-aVe"/>
                             <constraint firstItem="LsB-39-YeM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="d7E-AS-Sru"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LsB-39-YeM" secondAttribute="bottom" id="gpr-VY-RI1"/>
                             <constraint firstAttribute="trailing" secondItem="LsB-39-YeM" secondAttribute="trailing" id="woB-vv-gWz"/>
