@@ -19,6 +19,16 @@ class ViewController: UIViewController {
          self.navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "rightTopImage") .withRenderingMode(.alwaysOriginal)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
+        if let revealVC = revealViewController() {
+            revealVC.rearViewRevealWidth = 280
+            
+            navigationItem.leftBarButtonItem?.target = revealVC
+            navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
+            view.addGestureRecognizer(revealVC.panGestureRecognizer()) 
+        }
+        
+        
+        
 }
 
     override func didReceiveMemoryWarning() {
