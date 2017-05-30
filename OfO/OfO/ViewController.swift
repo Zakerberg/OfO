@@ -14,7 +14,10 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
     var mapView :MAMapView!
     /* SearchAPI  */
     var search:AMapSearchAPI!
+    var pin :MyPinAnnotation!
     
+    /*  屏幕中心大头针  */
+    var pinView :MAPinAnnotationView!
     
     /* 首页面板   */
     @IBOutlet weak var panelView: UIView!
@@ -59,7 +62,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         
         self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "ofoLogo"))
         self.navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "leftTopImage").withRenderingMode(.alwaysOriginal)
-         self.navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "rightTopImage") .withRenderingMode(.alwaysOriginal)
+        self.navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "rightTopImage") .withRenderingMode(.alwaysOriginal)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         if let revealVC = revealViewController() {
@@ -67,22 +70,50 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
             
             navigationItem.leftBarButtonItem?.target = revealVC
             navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
-            view.addGestureRecognizer(revealVC.panGestureRecognizer()) 
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
         
-}
+    }
+    
+//MARK: ------------ MapView Delegate(地图初始化完成) ------------
+    func mapInitComplete(_ mapView: MAMapView!) {
+        pin = MyPinAnnotation()
+        pin.coordinate = mapView.centerCoordinate
+        pin.lockedScreenPoint = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
+        pin.isLockedToScreen = true
+        
+        mapView.addAnnotation(pin)
+        mapView.showAnnotations([pin], animated: true)
+    }
+    
+    
 //MARK: ------------ MapView Delegate(自定义大头针) ------------
-     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
         /*** 用户定位的位置,不需要自定义   ***/
         if annotation is MAUserLocation {
-           return nil
+            return nil
         }
         
-        let reuseid = "myid"
+        if  annotation is MyPinAnnotation {
+            let reuseid = "Mypinid"
+            var annotaionV = mapView.dequeueReusableAnnotationView(withIdentifier: reuseid)
+            if annotaionV == nil {
+                annotaionV = MAPinAnnotationView(annotation: annotation, reuseIdentifier: reuseid)
+            }
+            
+            annotaionV?.image = #imageLiteral(resourceName: "homePage_wholeAnchor")
+            annotaionV?.canShowCallout = false
+            
+            pinView = annotaionV as! MAPinAnnotationView
+            return annotaionV
+            
+        }
+        
+        let reuseid = "reuseid"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseid) as? MAPinAnnotationView
-    
+        
         if annotationView == nil {
-         annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: reuseid)
+            annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: reuseid)
         }
         
         if annotation.title == "正常可用" {
@@ -90,10 +121,10 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         } else {
             annotationView?.image = #imageLiteral(resourceName: "HomePage_nearbyBikeRedPacket")
         }
-  
+        
         annotationView?.canShowCallout = true
         annotationView?.animatesDrop = true
-    
+        
         return annotationView
     }
     
@@ -125,11 +156,11 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         mapView.addAnnotations(annotations)
         mapView.showAnnotations(annotations, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 

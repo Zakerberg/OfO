@@ -15,6 +15,7 @@
 		450106341EDBC62500AA7A17 /* MJHomeWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */; };
 		450106361EDBFF5500AA7A17 /* MJMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450106351EDBFF5500AA7A17 /* MJMenuController.swift */; };
 		45307E6B1EDD396400FBC98E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45307E6A1EDD396400FBC98E /* Common.swift */; };
+		45307E6D1EDD948500FBC98E /* MyPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45307E6C1EDD948500FBC98E /* MyPinAnnotation.swift */; };
 		8A535E41D2A11E1E73F584E1 /* Pods_OfO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E96F4199968277270EC3DB /* Pods_OfO.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		450106351EDBFF5500AA7A17 /* MJMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMenuController.swift; sourceTree = "<group>"; };
 		45307E661EDD0D6800FBC98E /* OfO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfO-Bridging-Header.h"; sourceTree = "<group>"; };
 		45307E6A1EDD396400FBC98E /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		45307E6C1EDD948500FBC98E /* MyPinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPinAnnotation.swift; sourceTree = "<group>"; };
 		4D8A0FED215680AAB71292AF /* Pods-OfO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.debug.xcconfig"; sourceTree = "<group>"; };
 		576768DEBB223CC7950C13F1 /* Pods-OfO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.release.xcconfig"; sourceTree = "<group>"; };
 		70E96F4199968277270EC3DB /* Pods_OfO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				4501061E1EDBBF4500AA7A17 /* AppDelegate.swift */,
+				45307E6C1EDD948500FBC98E /* MyPinAnnotation.swift */,
 				450106201EDBBF4500AA7A17 /* ViewController.swift */,
 				450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */,
 				450106351EDBFF5500AA7A17 /* MJMenuController.swift */,
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45307E6D1EDD948500FBC98E /* MyPinAnnotation.swift in Sources */,
 				450106211EDBBF4500AA7A17 /* ViewController.swift in Sources */,
 				450106361EDBFF5500AA7A17 /* MJMenuController.swift in Sources */,
 				4501061F1EDBBF4500AA7A17 /* AppDelegate.swift in Sources */,
