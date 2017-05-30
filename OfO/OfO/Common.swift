@@ -23,15 +23,11 @@ let MJSCREENH = UIScreen.main.bounds.height
 // RGB颜色
 func RGB(r:Float, g: Float, b: Float, alpha: Float = 1) -> UIColor {
     return UIColor(colorLiteralRed: r/Float(255), green: g/Float(255), blue: b/Float(255), alpha: alpha)
-
+}
 // 随机颜色
 func MJRandomColor() -> UIColor{
     let r =  Float(arc4random()%256)
     let g =  Float(arc4random()%256)
     let b =  Float(arc4random()%256)
     return RGB(r: r, g: g, b: b)
-    }
-    
 }
-
-
