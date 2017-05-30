@@ -39,18 +39,6 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         search.aMapPOIAroundSearch(request)
     }
     
-    /***  搜索周边完成后的处理  ***/
-    func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
-        
-        guard response.count > 0 else {
-            print("周边没有小黄车")
-            return
-        }
-        
-        for poi in response.pois {
-            print(poi.name)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +48,8 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         view.bringSubview(toFront: panelView)
         
         mapView.delegate = self
+        mapView.zoomLevel = 17
+        
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
         
@@ -80,6 +70,35 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         }
         
 }
+//MARK: ------------ Map Search Delegate(搜索) ------------
+    /***  搜索周边完成后的处理  ***/
+    func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
+        
+        guard response.count > 0 else {
+            print("周边没有小黄车")
+            return
+        }
+        
+        var annotations : [MAPointAnnotation] = []
+        
+        annotations = response.pois.map {
+            
+            let annotation = MAPointAnnotation()
+            
+            annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees($0.location.latitude), longitude: CLLocationDegrees($0.location.longitude))
+            
+            if $0.distance < 200 {
+                annotation.title = "红包车"
+                annotation.subtitle = "开锁骑行10分钟得现金红包"
+            } else {
+                annotation.title = "正常可用"
+            }
+            return annotation
+        }
+        
+        mapView.addAnnotations(annotations)
+        mapView.showAnnotations(annotations, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
