@@ -15,6 +15,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
     /* SearchAPI  */
     var search:AMapSearchAPI!
     var pin :MyPinAnnotation!
+    var nearBySearch = true
     
     /*  屏幕中心大头针  */
     var pinView :MAPinAnnotationView!
@@ -73,6 +74,24 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
             view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
         
+    }
+    
+//MARK: ------------ MapView Delegate ------------
+    
+    func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!)
+    {
+        let aViews = views as! [MAAnnotationView]
+        
+        for aView in aViews {
+            guard aView.annotation is MAPointAnnotation else {
+                continue
+            }
+            aView.transform = CGAffineTransform(scaleX: 0, y: 0)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+                aView.transform = .identity
+            }, completion: nil)
+        }
     }
     
 //MARK: ------------ (大头针动画) ------------
@@ -172,7 +191,12 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         }
         
         mapView.addAnnotations(annotations)
-        mapView.showAnnotations(annotations, animated: true)
+        
+        if nearBySearch {
+            mapView.showAnnotations(annotations, animated: true)
+            nearBySearch = !nearBySearch
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
