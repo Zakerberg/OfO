@@ -75,6 +75,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         
     }
     
+    
 //MARK: ------------ MapView Delegate(地图初始化完成) ------------
     func mapInitComplete(_ mapView: MAMapView!) {
         pin = MyPinAnnotation()
@@ -85,8 +86,16 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         mapView.addAnnotation(pin)
         mapView.showAnnotations([pin], animated: true)
     }
-    
-    
+   
+//MARK: ------------ MapView Delegate(地图用户的交互) -------------
+    func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool)
+    {
+        if wasUserAction {
+            pin.isLockedToScreen = true
+            searchCustomerLocation(mapView.centerCoordinate)
+        }
+    }
+
 //MARK: ------------ MapView Delegate(自定义大头针) ------------
     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
         /*** 用户定位的位置,不需要自定义   ***/
@@ -106,9 +115,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
             
             pinView = annotaionV as! MAPinAnnotationView
             return annotaionV
-            
         }
-        
         let reuseid = "reuseid"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseid) as? MAPinAnnotationView
         
@@ -161,6 +168,5 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
