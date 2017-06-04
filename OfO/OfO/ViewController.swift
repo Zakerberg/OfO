@@ -75,6 +75,16 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         
     }
     
+//MARK: ------------ (大头针动画) ------------
+    func pinAnimation() {
+        //坠落动画 ,Y加位移
+        let endFrame = pinView.frame
+        pinView.frame = endFrame.offsetBy(dx: 0, dy: -15)
+        
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: { 
+            self.pinView.frame = endFrame
+        }, completion: nil)
+    }
     
 //MARK: ------------ MapView Delegate(地图初始化完成) ------------
     func mapInitComplete(_ mapView: MAMapView!) {
@@ -82,7 +92,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         pin.coordinate = mapView.centerCoordinate
         pin.lockedScreenPoint = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
         pin.isLockedToScreen = true
-        
+
         mapView.addAnnotation(pin)
         mapView.showAnnotations([pin], animated: true)
     }
@@ -92,6 +102,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
     {
         if wasUserAction {
             pin.isLockedToScreen = true
+            pinAnimation()
             searchCustomerLocation(mapView.centerCoordinate)
         }
     }
