@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sS9-IH-VxM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sS9-IH-VxM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,6 +56,9 @@
                                                 <state key="normal" title="立即用车" backgroundImage="userBikeImage">
                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="i0s-uw-dwm" kind="show" id="caZ-L9-aIn"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9W6-wS-DWw">
                                                 <rect key="frame" x="275" y="56" width="40" height="54.5"/>
@@ -468,6 +471,80 @@
             </objects>
             <point key="canvasLocation" x="-546" y="884"/>
         </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="SJ6-W8-4pk">
+            <objects>
+                <viewController id="i0s-uw-dwm" customClass="MJScanViewController" customModule="OfO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vag-bY-7Dw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q7O-Mu-yHJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iKa-FB-8b6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXQ-iS-met">
+                                <rect key="frame" x="16" y="533.5" width="343" height="133.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mYT-eM-TNp">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="133.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="cTs-WL-pd3">
+                                                <rect key="frame" x="0.0" y="41" width="171.5" height="51.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-aj-0TA">
+                                                        <rect key="frame" x="80" y="0.0" width="12" height="22"/>
+                                                        <state key="normal" image="inputBlikeNo"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手动输入车牌" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uy-ye-Who">
+                                                        <rect key="frame" x="34" y="31" width="104" height="20.5"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="1wH-tU-Pqe">
+                                                <rect key="frame" x="171.5" y="41" width="171.5" height="51.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72Y-JK-v9v">
+                                                        <rect key="frame" x="75.5" y="0.0" width="21" height="22"/>
+                                                        <state key="normal" image="torch_close_icon"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手电筒" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81b-B3-yqI">
+                                                        <rect key="frame" x="60" y="31" width="52" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mYT-eM-TNp" secondAttribute="trailing" id="NGh-1C-aF6"/>
+                                    <constraint firstItem="mYT-eM-TNp" firstAttribute="leading" secondItem="mXQ-iS-met" secondAttribute="leading" id="ZLk-ql-SdG"/>
+                                    <constraint firstAttribute="bottom" secondItem="mYT-eM-TNp" secondAttribute="bottom" id="gnU-PD-TZq"/>
+                                    <constraint firstItem="mYT-eM-TNp" firstAttribute="top" secondItem="mXQ-iS-met" secondAttribute="top" id="rrX-TY-bbk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mXQ-iS-met" firstAttribute="height" secondItem="iKa-FB-8b6" secondAttribute="height" multiplier="0.2" id="JvV-QU-HS1"/>
+                            <constraint firstItem="mXQ-iS-met" firstAttribute="leading" secondItem="iKa-FB-8b6" secondAttribute="leadingMargin" id="UAX-xZ-bCp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mXQ-iS-met" secondAttribute="trailing" id="XkL-Wk-wWr"/>
+                            <constraint firstItem="Q7O-Mu-yHJ" firstAttribute="top" secondItem="mXQ-iS-met" secondAttribute="bottom" id="sld-pM-Xzg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PAb-CJ-vuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352.80000000000001" y="880.20989505247383"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="Fqj-qb-AVH">
             <objects>
@@ -510,8 +587,10 @@
         <image name="HomePage_UserGuide" width="20" height="20"/>
         <image name="RedPacketBike" width="340" height="135"/>
         <image name="UserInfo_defaultIcon" width="120" height="120"/>
+        <image name="inputBlikeNo" width="12" height="19"/>
         <image name="leftBottomImage" width="40" height="40"/>
         <image name="rightBottomImage" width="40" height="40"/>
+        <image name="torch_close_icon" width="21" height="21"/>
         <image name="userBikeImage" width="100" height="100"/>
         <image name="whiteImage" width="375" height="125"/>
     </resources>

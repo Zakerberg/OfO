@@ -1,7 +1,7 @@
 //
 //  MJMenuController.swift
 //  OfO
-//
+//  首页左侧菜单
 //  Created by Michael 柏 on 2017/5/29.
 //  Copyright © 2017年 Michael 柏. All rights reserved.
 //

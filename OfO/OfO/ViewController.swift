@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  OfO
-//
+//  主页面
 //  Created by Michael 柏 on 2017/5/29.
 //  Copyright © 2017年 Michael 柏. All rights reserved.
 //
@@ -159,7 +159,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMap
         mapView.addAnnotation(pin)
         mapView.showAnnotations([pin], animated: true)
         
-        searchBikeNearBy() 
+        searchBikeNearBy()
     }
     
     /* (地图用户的交互) */
@@ -249,7 +249,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMap
     //MARK: -- AMapNaviWalkManagerDelegate
     
     func walkManager(onCalculateRouteSuccess walkManager: AMapNaviWalkManager) {
-        print("规划路径成功:")
+        print("规划路径成功")
     
         mapView.removeOverlays(mapView.overlays)
         
