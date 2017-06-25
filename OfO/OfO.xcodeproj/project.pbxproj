@@ -24,6 +24,7 @@
 		4567CD041EFF82180075B31C /* LBXScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCFD1EFF82180075B31C /* LBXScanViewController.swift */; };
 		4567CD051EFF82180075B31C /* LBXScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCFE1EFF82180075B31C /* LBXScanViewStyle.swift */; };
 		4567CD061EFF82180075B31C /* LBXScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCFF1EFF82180075B31C /* LBXScanWrapper.swift */; };
+		4567CD081EFF85EE0075B31C /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4567CD071EFF85EE0075B31C /* CodeScan.bundle */; };
 		8A535E41D2A11E1E73F584E1 /* Pods_OfO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E96F4199968277270EC3DB /* Pods_OfO.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		4567CCFD1EFF82180075B31C /* LBXScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewController.swift; sourceTree = "<group>"; };
 		4567CCFE1EFF82180075B31C /* LBXScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewStyle.swift; sourceTree = "<group>"; };
 		4567CCFF1EFF82180075B31C /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
+		4567CD071EFF85EE0075B31C /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		4D8A0FED215680AAB71292AF /* Pods-OfO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.debug.xcconfig"; sourceTree = "<group>"; };
 		576768DEBB223CC7950C13F1 /* Pods-OfO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.release.xcconfig"; sourceTree = "<group>"; };
 		70E96F4199968277270EC3DB /* Pods_OfO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 		4567CCF81EFF82180075B31C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4567CD071EFF85EE0075B31C /* CodeScan.bundle */,
 				4567CCF91EFF82180075B31C /* LBXPermissions.swift */,
 				4567CCFA1EFF82180075B31C /* LBXScanLineAnimation.swift */,
 				4567CCFB1EFF82180075B31C /* LBXScanNetAnimation.swift */,
@@ -215,6 +218,7 @@
 				450106291EDBBF4500AA7A17 /* LaunchScreen.storyboard in Resources */,
 				450106261EDBBF4500AA7A17 /* Assets.xcassets in Resources */,
 				450106241EDBBF4500AA7A17 /* Main.storyboard in Resources */,
+				4567CD081EFF85EE0075B31C /* CodeScan.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

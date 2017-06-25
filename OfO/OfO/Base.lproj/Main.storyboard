@@ -511,6 +511,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72Y-JK-v9v">
                                                         <rect key="frame" x="75.5" y="0.0" width="21" height="22"/>
                                                         <state key="normal" image="torch_close_icon"/>
+                                                        <connections>
+                                                            <action selector="flashBtnTap:" destination="i0s-uw-dwm" eventType="touchUpInside" id="HkY-MN-qcD"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手电筒" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81b-B3-yqI">
                                                         <rect key="frame" x="60" y="31" width="52" height="20.5"/>
@@ -540,6 +543,10 @@
                             <constraint firstItem="Q7O-Mu-yHJ" firstAttribute="top" secondItem="mXQ-iS-met" secondAttribute="bottom" id="sld-pM-Xzg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="flashBtn" destination="72Y-JK-v9v" id="c9E-WE-GqW"/>
+                        <outlet property="pannelView" destination="mXQ-iS-met" id="RbK-Ad-XCU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PAb-CJ-vuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
