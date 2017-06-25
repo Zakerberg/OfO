@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MJScanViewController: UIViewController {
+class MJScanViewController: LBXScanViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
