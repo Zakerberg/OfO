@@ -12,6 +12,6 @@ target 'OfO' do
  pod 'AMapLocation'
  pod 'AMapSearch'
  pod 'AMapNavi'
- pod 'FTIndicator'
+ pod 'FTIndicator' 
 
 end

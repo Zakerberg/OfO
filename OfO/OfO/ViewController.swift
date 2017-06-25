@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import FTIndicator
 
 class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMapNaviWalkManagerDelegate{
     
@@ -27,6 +28,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMap
     @IBOutlet weak var panelView: UIView!
     /* 首页定位按钮 */
     @IBAction func LocationBtnClick(_ sender: UIButton) {
+        nearBySearch = true
         searchBikeNearBy()
     }
     
@@ -156,6 +158,8 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMap
         
         mapView.addAnnotation(pin)
         mapView.showAnnotations([pin], animated: true)
+        
+        searchBikeNearBy() 
     }
     
     /* (地图用户的交互) */
@@ -257,6 +261,22 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMap
         let polyline = MAPolyline(coordinates: &coordinates, count: UInt(coordinates.count))
         
         mapView.add(polyline)
+        
+        //用时
+        let walkMintues = walkManager.naviRoute!.routeTime / 60;
+        
+        var timeDesc = "一分钟以内"
+        if walkMintues > 0 {
+            timeDesc = walkMintues.description + "分钟"
+        }
+        
+        let hintTitle = "步行" + timeDesc
+        let SubTitle = "距离" + walkManager.naviRoute!.routeLength.description + "米"
+        
+        FTIndicator.setIndicatorStyle(.dark)
+        FTIndicator.showNotification(with: #imageLiteral(resourceName: "clock"), title: hintTitle, message: SubTitle)
+        
+        
     }
     
     func walkManager(_ walkManager: AMapNaviWalkManager, onCalculateRouteFailure error: Error) {

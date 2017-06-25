@@ -8,12 +8,8 @@
 
 import UIKit
 
-
 //高德地图需要的东西
 let MapAppKey = "ffba64661a9c0db240d6c5ea8f477470"
-
-
-
 
 
 // 屏幕的宽度和高度
