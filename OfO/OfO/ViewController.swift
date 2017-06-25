@@ -9,13 +9,16 @@
 import UIKit
 import SWRevealViewController
 
-class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
+class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMapNaviWalkManagerDelegate{
     
-    var mapView :MAMapView!
+    var mapView : MAMapView!
     /* SearchAPI  */
-    var search:AMapSearchAPI!
-    var pin :MyPinAnnotation!
+    var search: AMapSearchAPI!
+    var pin : MyPinAnnotation!
     var nearBySearch = true
+    var start,end : CLLocationCoordinate2D!
+    var walkManager : AMapNaviWalkManager!
+    
     
     /*  屏幕中心大头针  */
     var pinView :MAPinAnnotationView!
@@ -61,6 +64,12 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         search = AMapSearchAPI()
         search.delegate = self
         
+        walkManager = AMapNaviWalkManager()
+        walkManager.delegate = self
+        
+        
+        
+        
         self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "ofoLogo"))
         self.navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "leftTopImage").withRenderingMode(.alwaysOriginal)
         self.navigationItem.rightBarButtonItem?.image = #imageLiteral(resourceName: "rightTopImage") .withRenderingMode(.alwaysOriginal)
@@ -76,7 +85,25 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         
     }
     
-//MARK: ------------ MapView Delegate ------------
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
+//MARK: -- (大头针动画)
+    func pinAnimation() {
+        //坠落动画 ,Y加位移
+        let endFrame = pinView.frame
+        pinView.frame = endFrame.offsetBy(dx: 0, dy: -15)
+        
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
+            self.pinView.frame = endFrame
+        }, completion: nil)
+    }
+    
+    
+//MARK: -- MapView Delegate
     
     func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!)
     {
@@ -93,19 +120,20 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
             }, completion: nil)
         }
     }
+
     
-//MARK: ------------ (大头针动画) ------------
-    func pinAnimation() {
-        //坠落动画 ,Y加位移
-        let endFrame = pinView.frame
-        pinView.frame = endFrame.offsetBy(dx: 0, dy: -15)
+    func mapView(_ mapView: MAMapView!, didSelect view: MAAnnotationView!) {
         
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: { 
-            self.pinView.frame = endFrame
-        }, completion: nil)
+        start = pin.coordinate
+        end = view.annotation.coordinate
+        let startPoint = AMapNaviPoint.location(withLatitude: CGFloat(start.latitude), longitude: CGFloat(end.longitude))!
+        let endPoint = AMapNaviPoint.location(withLatitude: CGFloat(end.latitude), longitude: CGFloat(end.longitude))!
+        
+        walkManager.calculateWalkRoute(withStart: [startPoint], end: [endPoint])
     }
     
-//MARK: ------------ MapView Delegate(地图初始化完成) ------------
+    
+/*(地图初始化完成)*/
     func mapInitComplete(_ mapView: MAMapView!) {
         pin = MyPinAnnotation()
         pin.coordinate = mapView.centerCoordinate
@@ -116,7 +144,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         mapView.showAnnotations([pin], animated: true)
     }
    
-//MARK: ------------ MapView Delegate(地图用户的交互) -------------
+/*(地图用户的交互)*/
     func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool)
     {
         if wasUserAction {
@@ -126,7 +154,7 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         }
     }
 
-//MARK: ------------ MapView Delegate(自定义大头针) ------------
+/*(自定义大头针)*/
     func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
         /*** 用户定位的位置,不需要自定义   ***/
         if annotation is MAUserLocation {
@@ -165,7 +193,8 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         return annotationView
     }
     
-//MARK: ------------ Map Search Delegate(搜索) ------------------
+//MARK: -- Map Search Delegate(搜索) 
+    
     /***  搜索周边完成后的处理  ***/
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         guard response.count > 0 else {
@@ -198,10 +227,20 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate {
         }
         
     }
+//MARK: -- AMapNaviWalkManagerDelegate
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func walkManager(onCalculateRouteSuccess walkManager: AMapNaviWalkManager) {
+        
     }
+    
+    func walkManager(_ walkManager: AMapNaviWalkManager, onCalculateRouteFailure error: Error) {
+        
+    }
+    
+    
+    
+    
+    
 }
 
