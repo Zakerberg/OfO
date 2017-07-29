@@ -576,7 +576,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0s-z0-0qg">
-                                <rect key="frame" x="24" y="28" width="327" height="267"/>
+                                <rect key="frame" x="24" y="72" width="327" height="267"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inputPageImage" translatesAutoresizingMaskIntoConstraints="NO" id="dgI-4r-ZM3">
                                         <rect key="frame" x="10" y="0.0" width="307" height="117"/>
@@ -630,9 +630,20 @@
                                     <constraint firstItem="Xnn-t5-Hqu" firstAttribute="centerX" secondItem="E0s-z0-0qg" secondAttribute="centerX" id="uDw-kb-ndZ"/>
                                     <constraint firstItem="o1I-Za-ydQ" firstAttribute="centerX" secondItem="E0s-z0-0qg" secondAttribute="centerX" id="vt9-Dh-Her"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="y2Z-ZX-SVy">
-                                <rect key="frame" x="60" y="329" width="255" height="74"/>
+                                <rect key="frame" x="60" y="373" width="255" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHA-FR-jQP">
                                         <rect key="frame" x="0.0" y="2" width="70" height="70"/>
