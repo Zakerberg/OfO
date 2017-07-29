@@ -24,9 +24,23 @@ class MJInputViewController: UIViewController {
 
         inputTF.layer.borderColor = UIColor.OfO.cgColor
         inputTF.layer.borderWidth = 2
-        
+        title = "车辆解锁"
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //MARK: -- BtnClick
     
     @IBAction func flashBtnClick(_ sender: UIButton) {

@@ -11,15 +11,11 @@ import FTIndicator
 
 class MJScanViewController: LBXScanViewController {
 
-    
     @IBOutlet weak var flashBtn: UIButton!
-    
     @IBOutlet weak var pannelView: UIView!
   
     var isFlashOn = false
-    
-    
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         view.bringSubview(toFront: pannelView)
@@ -28,7 +24,7 @@ class MJScanViewController: LBXScanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "扫码用车"
+        title = "扫码用车"
         navigationController?.navigationBar.barStyle = .blackTranslucent
         navigationController?.navigationBar.tintColor = UIColor.white
     
@@ -41,27 +37,22 @@ class MJScanViewController: LBXScanViewController {
         scanStyle = style
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.tintColor = UIColor.black
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    
+    // 扫码后提示
     override func handleCodeResult(arrayResult: [LBXScanResult]) {
-        
         if let result = arrayResult.first {
             
             let msg = result.strScanned
-            
             FTIndicator.setIndicatorStyle(.dark)
             FTIndicator.showToastMessage(msg)
         }
     }
-    
-    
-    
     
 //MARK: -- flashBtnClick
     
@@ -76,7 +67,6 @@ class MJScanViewController: LBXScanViewController {
         }
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

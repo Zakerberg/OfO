@@ -18,7 +18,7 @@ class MJHomeWebViewController: UIViewController {
 
         webView = WKWebView(frame: self.view.frame)
         view.addSubview(webView)
-        self.title = "活动中心"
+        title = "活动中心"
         let url = URL(string: "http://m.ofo.so/active.html")!
         let request = URLRequest(url:url )
         
