@@ -612,6 +612,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="y9y-kG-POA"/>
                                                 </constraints>
                                                 <state key="normal" image="nextArrow_unenable"/>
+                                                <connections>
+                                                    <action selector="goBtnClick:" destination="B8a-yA-mgX" eventType="touchUpInside" id="4oh-md-TXT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -692,6 +695,7 @@
                     </view>
                     <connections>
                         <outlet property="flashBtn" destination="mHA-FR-jQP" id="wJ2-xG-aWI"/>
+                        <outlet property="goBtn" destination="Nsh-n1-xAU" id="jhd-Cb-e1b"/>
                         <outlet property="inputTF" destination="9zc-B3-uaV" id="gDS-Pj-vAu"/>
                         <outlet property="voiceBtn" destination="XYU-rf-AoC" id="BWZ-JT-Cal"/>
                     </connections>

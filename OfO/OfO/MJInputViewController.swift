@@ -7,14 +7,14 @@
 //  ----------------- 输入车牌控制器 -------------------
 
 import UIKit
+import APNumberPad
 
-class MJInputViewController: UIViewController {
+class MJInputViewController: UIViewController,APNumberPadDelegate,UITextFieldDelegate {
 
     @IBOutlet weak var inputTF: UITextField!
-   
     @IBOutlet weak var flashBtn: UIButton!
-    
     @IBOutlet weak var voiceBtn: UIButton!
+    @IBOutlet weak var goBtn: UIButton!
     
     var isFlashOn = false
     var isVoiceOn = true
@@ -25,21 +25,12 @@ class MJInputViewController: UIViewController {
         inputTF.layer.borderColor = UIColor.OfO.cgColor
         inputTF.layer.borderWidth = 2
         title = "车辆解锁"
+        
+        let numerPad = APNumberPad(delegate: self)
+        numerPad.leftFunctionButton.setTitle("确定", for: .normal)
+        inputTF.inputView = numerPad
+        inputTF.delegate = self
     }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     //MARK: -- BtnClick
     
@@ -55,12 +46,40 @@ class MJInputViewController: UIViewController {
         isVoiceOn ? voiceBtn.setImage(#imageLiteral(resourceName: "voiceopen"), for: .normal) : voiceBtn.setImage(#imageLiteral(resourceName: "voiceclose"), for: .normal)
     }
     
+    @IBAction func goBtnClick(_ sender: UIButton) {
+        
+        
+    }
+    
+    
+    //MARK: -- APNumberPadDelegate
+    
+    func numberPad(_ numberPad: APNumberPad, functionButtonAction functionButton: UIButton, textInput: UIResponder) {
+    }
+    
+    //MARK: -- UITextFieldDelegate
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = inputTF.text else {
+            return true
+        }
+        
+        let newLength = text.characters.count + string.characters.count - range.length
+        
+        if newLength > 0 {
+            goBtn.setImage(#imageLiteral(resourceName: "nextArrow_enable"), for: .normal)
+            goBtn.backgroundColor = UIColor.OfO
+        } else {
+            goBtn.setImage(#imageLiteral(resourceName: "nextArrow_unenable"), for: .normal)
+            goBtn.backgroundColor = UIColor.groupTableViewBackground
+        }
+        
+        return newLength <= 8
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
 }
