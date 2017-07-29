@@ -614,7 +614,7 @@
                                                 <state key="normal" image="nextArrow_unenable"/>
                                                 <connections>
                                                     <action selector="goBtnClick:" destination="B8a-yA-mgX" eventType="touchUpInside" id="4oh-md-TXT"/>
-                                                    <segue destination="zyV-HJ-RgI" kind="modal" modalTransitionStyle="flipHorizontal" id="bcX-Iu-RUo"/>
+                                                    <segue destination="zyV-HJ-RgI" kind="modal" modalTransitionStyle="flipHorizontal" id="yqK-8E-rXy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -736,10 +736,10 @@
             </objects>
             <point key="canvasLocation" x="-362" y="1416"/>
         </scene>
-        <!--Input View Controller-->
+        <!--View Controller-->
         <scene sceneID="XwM-Nw-fib">
             <objects>
-                <viewController id="zyV-HJ-RgI" customClass="MJInputViewController" customModule="OfO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zyV-HJ-RgI" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uag-9g-sFq"/>
                         <viewControllerLayoutGuide type="bottom" id="xMB-5Q-eHm"/>
@@ -764,9 +764,6 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="p1B-Nj-H26"/>
                                         </constraints>
                                         <state key="normal" image="btn_unenableTorch"/>
-                                        <connections>
-                                            <action selector="flashBtnClick:" destination="zyV-HJ-RgI" eventType="touchUpInside" id="qam-8E-Zan"/>
-                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-vg-6R3">
                                         <rect key="frame" x="127" y="10" width="1" height="54"/>
@@ -782,9 +779,6 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="HAU-AM-daE"/>
                                         </constraints>
                                         <state key="normal" image="voiceopen"/>
-                                        <connections>
-                                            <action selector="voiceBtnClick:" destination="zyV-HJ-RgI" eventType="touchUpInside" id="9ib-TH-hVS"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -805,6 +799,66 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHZ-He-ama">
+                                        <rect key="frame" x="10" y="190" width="76" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4R-Ql-02j">
+                                        <rect key="frame" x="169" y="190" width="77" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRp-Uj-qJY">
+                                        <rect key="frame" x="84" y="190" width="77" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a42-63-AX3">
+                                        <rect key="frame" x="238" y="190" width="81" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -844,14 +898,10 @@
                             <constraint firstItem="HdI-m4-EKd" firstAttribute="top" secondItem="Ys9-u3-sQ9" secondAttribute="bottom" constant="20" id="vyS-s2-PCX"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="flashBtn" destination="wSc-Kg-d62" id="zL0-c3-Pan"/>
-                        <outlet property="voiceBtn" destination="txl-au-5mw" id="Ibt-Ne-0AQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zt-Z4-IZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2137" y="895"/>
+            <point key="canvasLocation" x="2136.8000000000002" y="894.60269865067471"/>
         </scene>
     </scenes>
     <resources>
