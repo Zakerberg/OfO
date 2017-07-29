@@ -563,10 +563,10 @@
             </objects>
             <point key="canvasLocation" x="352.80000000000001" y="880.20989505247383"/>
         </scene>
-        <!--View Controller-->
+        <!--Input View Controller-->
         <scene sceneID="6fq-dl-44M">
             <objects>
-                <viewController id="B8a-yA-mgX" sceneMemberID="viewController">
+                <viewController id="B8a-yA-mgX" customClass="MJInputViewController" customModule="OfO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lnk-85-WSO"/>
                         <viewControllerLayoutGuide type="bottom" id="2hM-GE-MIZ"/>
@@ -595,11 +595,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulo-2j-Zmj">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ulo-2j-Zmj">
                                         <rect key="frame" x="10" y="151.5" width="307" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入车牌号" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zc-B3-uaV">
-                                                <rect key="frame" x="0.0" y="0.0" width="257" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="50"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -684,6 +684,9 @@
                             <constraint firstItem="E0s-z0-0qg" firstAttribute="height" secondItem="uJS-dS-kMm" secondAttribute="height" multiplier="0.4" id="zHU-23-vyD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTF" destination="9zc-B3-uaV" id="gDS-Pj-vAu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gec-TM-yqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

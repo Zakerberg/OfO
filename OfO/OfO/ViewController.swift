@@ -1,10 +1,10 @@
 //
 //  ViewController.swift
 //  OfO
-//  主页面
+//
 //  Created by Michael 柏 on 2017/5/29.
 //  Copyright © 2017年 Michael 柏. All rights reserved.
-//
+//  -------------------  主页面  ---------------------
 
 import UIKit
 import SWRevealViewController

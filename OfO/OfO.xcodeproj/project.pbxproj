@@ -16,6 +16,8 @@
 		450106361EDBFF5500AA7A17 /* MJMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450106351EDBFF5500AA7A17 /* MJMenuController.swift */; };
 		45307E6B1EDD396400FBC98E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45307E6A1EDD396400FBC98E /* Common.swift */; };
 		45307E6D1EDD948500FBC98E /* MyPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45307E6C1EDD948500FBC98E /* MyPinAnnotation.swift */; };
+		454068ED1F2C4E8800B0FA3C /* MJInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454068EC1F2C4E8800B0FA3C /* MJInputViewController.swift */; };
+		454068EF1F2C50CC00B0FA3C /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454068EE1F2C50CC00B0FA3C /* ExtensionHelper.swift */; };
 		4567CCF61EFF7B850075B31C /* MJScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCF51EFF7B850075B31C /* MJScanViewController.swift */; };
 		4567CD001EFF82180075B31C /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCF91EFF82180075B31C /* LBXPermissions.swift */; };
 		4567CD011EFF82180075B31C /* LBXScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCFA1EFF82180075B31C /* LBXScanLineAnimation.swift */; };
@@ -41,6 +43,8 @@
 		45307E661EDD0D6800FBC98E /* OfO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfO-Bridging-Header.h"; sourceTree = "<group>"; };
 		45307E6A1EDD396400FBC98E /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		45307E6C1EDD948500FBC98E /* MyPinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPinAnnotation.swift; sourceTree = "<group>"; };
+		454068EC1F2C4E8800B0FA3C /* MJInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJInputViewController.swift; sourceTree = "<group>"; };
+		454068EE1F2C50CC00B0FA3C /* ExtensionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
 		4567CCF51EFF7B850075B31C /* MJScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJScanViewController.swift; sourceTree = "<group>"; };
 		4567CCF91EFF82180075B31C /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
 		4567CCFA1EFF82180075B31C /* LBXScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanLineAnimation.swift; sourceTree = "<group>"; };
@@ -95,12 +99,14 @@
 				450106331EDBC62500AA7A17 /* MJHomeWebViewController.swift */,
 				450106351EDBFF5500AA7A17 /* MJMenuController.swift */,
 				4567CCF51EFF7B850075B31C /* MJScanViewController.swift */,
+				454068EC1F2C4E8800B0FA3C /* MJInputViewController.swift */,
 				450106221EDBBF4500AA7A17 /* Main.storyboard */,
 				450106251EDBBF4500AA7A17 /* Assets.xcassets */,
 				450106271EDBBF4500AA7A17 /* LaunchScreen.storyboard */,
 				4501062A1EDBBF4500AA7A17 /* Info.plist */,
 				45307E661EDD0D6800FBC98E /* OfO-Bridging-Header.h */,
 				45307E6A1EDD396400FBC98E /* Common.swift */,
+				454068EE1F2C50CC00B0FA3C /* ExtensionHelper.swift */,
 			);
 			path = OfO;
 			sourceTree = "<group>";
@@ -290,6 +296,8 @@
 				4567CD041EFF82180075B31C /* LBXScanViewController.swift in Sources */,
 				4567CCF61EFF7B850075B31C /* MJScanViewController.swift in Sources */,
 				45307E6B1EDD396400FBC98E /* Common.swift in Sources */,
+				454068EF1F2C50CC00B0FA3C /* ExtensionHelper.swift in Sources */,
+				454068ED1F2C4E8800B0FA3C /* MJInputViewController.swift in Sources */,
 				450106341EDBC62500AA7A17 /* MJHomeWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

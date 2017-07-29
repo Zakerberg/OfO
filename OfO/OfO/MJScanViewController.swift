@@ -1,10 +1,10 @@
 //
 //  MJScanViewController.swift
 //  OfO
-//  扫码界面
+//
 //  Created by Michael 柏 on 2017/6/25.
 //  Copyright © 2017年 Michael 柏. All rights reserved.
-//
+//  -----------------   扫码界面  --------------------- 
 
 import UIKit
 import FTIndicator
