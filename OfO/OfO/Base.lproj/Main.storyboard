@@ -614,6 +614,7 @@
                                                 <state key="normal" image="nextArrow_unenable"/>
                                                 <connections>
                                                     <action selector="goBtnClick:" destination="B8a-yA-mgX" eventType="touchUpInside" id="4oh-md-TXT"/>
+                                                    <segue destination="zyV-HJ-RgI" kind="modal" modalTransitionStyle="flipHorizontal" id="bcX-Iu-RUo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -735,6 +736,123 @@
             </objects>
             <point key="canvasLocation" x="-362" y="1416"/>
         </scene>
+        <!--Input View Controller-->
+        <scene sceneID="XwM-Nw-fib">
+            <objects>
+                <viewController id="zyV-HJ-RgI" customClass="MJInputViewController" customModule="OfO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uag-9g-sFq"/>
+                        <viewControllerLayoutGuide type="bottom" id="xMB-5Q-eHm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VDV-J8-2DT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-u3-sQ9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="解锁码" id="7yA-1Q-WoC"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="cqv-DE-gti">
+                                <rect key="frame" x="60" y="329" width="255" height="74"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSc-Kg-d62">
+                                        <rect key="frame" x="0.0" y="2" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="SVT-hc-bSo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="p1B-Nj-H26"/>
+                                        </constraints>
+                                        <state key="normal" image="btn_unenableTorch"/>
+                                        <connections>
+                                            <action selector="flashBtnClick:" destination="zyV-HJ-RgI" eventType="touchUpInside" id="qam-8E-Zan"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-vg-6R3">
+                                        <rect key="frame" x="127" y="10" width="1" height="54"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="L5k-lV-Uyx"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txl-au-5mw">
+                                        <rect key="frame" x="185" y="2" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="383-sH-Cea"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="HAU-AM-daE"/>
+                                        </constraints>
+                                        <state key="normal" image="voiceopen"/>
+                                        <connections>
+                                            <action selector="voiceBtnClick:" destination="zyV-HJ-RgI" eventType="touchUpInside" id="9ib-TH-hVS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wSc-Kg-d62" firstAttribute="top" secondItem="cqv-DE-gti" secondAttribute="top" constant="2" id="ZuS-ib-6FR"/>
+                                    <constraint firstItem="7iJ-vg-6R3" firstAttribute="top" secondItem="cqv-DE-gti" secondAttribute="top" constant="10" id="tbV-0U-in3"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdI-m4-EKd">
+                                <rect key="frame" x="24" y="64" width="327" height="267"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smartLock" translatesAutoresizingMaskIntoConstraints="NO" id="jHx-kG-jVk">
+                                        <rect key="frame" x="10" y="0.0" width="307" height="135"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车牌号XXX的解锁码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXZ-93-ePb">
+                                        <rect key="frame" x="56" y="130" width="203.5" height="27"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jHx-kG-jVk" firstAttribute="leading" secondItem="HdI-m4-EKd" secondAttribute="leading" constant="10" id="HXP-yW-Geu"/>
+                                    <constraint firstItem="eXZ-93-ePb" firstAttribute="leading" secondItem="HdI-m4-EKd" secondAttribute="leading" constant="56" id="O7W-Bn-fT7"/>
+                                    <constraint firstItem="jHx-kG-jVk" firstAttribute="top" secondItem="HdI-m4-EKd" secondAttribute="top" id="UMt-c7-pLz"/>
+                                    <constraint firstItem="jHx-kG-jVk" firstAttribute="centerX" secondItem="HdI-m4-EKd" secondAttribute="centerX" id="j9H-LG-ovn"/>
+                                    <constraint firstItem="eXZ-93-ePb" firstAttribute="top" secondItem="HdI-m4-EKd" secondAttribute="top" constant="130" id="yM4-Q4-mvF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ys9-u3-sQ9" secondAttribute="trailing" id="1JL-cL-wMH"/>
+                            <constraint firstItem="HdI-m4-EKd" firstAttribute="centerX" secondItem="cqv-DE-gti" secondAttribute="centerX" id="4Fg-pN-Gxh"/>
+                            <constraint firstItem="Ys9-u3-sQ9" firstAttribute="leading" secondItem="VDV-J8-2DT" secondAttribute="leading" id="4gc-cA-xlh"/>
+                            <constraint firstItem="HdI-m4-EKd" firstAttribute="top" secondItem="VDV-J8-2DT" secondAttribute="top" constant="64" id="BLB-ig-KZz"/>
+                            <constraint firstItem="Ys9-u3-sQ9" firstAttribute="top" secondItem="VDV-J8-2DT" secondAttribute="top" id="DmE-aP-7wV"/>
+                            <constraint firstItem="xMB-5Q-eHm" firstAttribute="top" secondItem="cqv-DE-gti" secondAttribute="bottom" constant="264" id="JmN-0p-56a"/>
+                            <constraint firstItem="Ys9-u3-sQ9" firstAttribute="leading" secondItem="VDV-J8-2DT" secondAttribute="leading" id="Ms6-P5-3wF"/>
+                            <constraint firstItem="HdI-m4-EKd" firstAttribute="centerX" secondItem="Ys9-u3-sQ9" secondAttribute="centerX" id="OWw-mk-Ja8"/>
+                            <constraint firstItem="xMB-5Q-eHm" firstAttribute="top" secondItem="HdI-m4-EKd" secondAttribute="bottom" constant="336" id="cZY-8P-nS2"/>
+                            <constraint firstItem="cqv-DE-gti" firstAttribute="centerX" secondItem="VDV-J8-2DT" secondAttribute="centerX" id="oQa-Na-YBb"/>
+                            <constraint firstItem="HdI-m4-EKd" firstAttribute="leading" secondItem="VDV-J8-2DT" secondAttribute="leadingMargin" constant="8" id="uXf-5m-MNv"/>
+                            <constraint firstItem="HdI-m4-EKd" firstAttribute="top" secondItem="Ys9-u3-sQ9" secondAttribute="bottom" constant="20" id="vyS-s2-PCX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="flashBtn" destination="wSc-Kg-d62" id="zL0-c3-Pan"/>
+                        <outlet property="voiceBtn" destination="txl-au-5mw" id="Ibt-Ne-0AQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zt-Z4-IZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137" y="895"/>
+        </scene>
     </scenes>
     <resources>
         <image name="GrayCerTification_homePage" width="13" height="9"/>
@@ -752,6 +870,7 @@
         <image name="leftBottomImage" width="40" height="40"/>
         <image name="nextArrow_unenable" width="25" height="19"/>
         <image name="rightBottomImage" width="40" height="40"/>
+        <image name="smartLock" width="340" height="135"/>
         <image name="torch_close_icon" width="21" height="21"/>
         <image name="userBikeImage" width="100" height="100"/>
         <image name="voiceopen" width="45" height="45"/>
