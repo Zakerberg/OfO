@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FTIndicator
 
 class MJScanViewController: LBXScanViewController {
 
@@ -17,6 +18,13 @@ class MJScanViewController: LBXScanViewController {
   
     var isFlashOn = false
     
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        view.bringSubview(toFront: pannelView)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +32,10 @@ class MJScanViewController: LBXScanViewController {
         navigationController?.navigationBar.barStyle = .blackTranslucent
         navigationController?.navigationBar.tintColor = UIColor.white
     
-        
         var style = LBXScanViewStyle()
         style.anmiationStyle = .NetGrid
+        
+        // 引用Bundle文件中的图片
         style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_part_net")
         
         scanStyle = style
@@ -34,27 +43,40 @@ class MJScanViewController: LBXScanViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.tintColor = UIColor.black
     }
     
-    //闪光灯
+    
+    override func handleCodeResult(arrayResult: [LBXScanResult]) {
+        
+        if let result = arrayResult.first {
+            
+            let msg = result.strScanned
+            
+            FTIndicator.setIndicatorStyle(.dark)
+            FTIndicator.showToastMessage(msg)
+        }
+    }
+    
+    
+    
+    
+//MARK: -- flashBtnClick
+    
     @IBAction func flashBtnTap(_ sender: UIButton) {
         isFlashOn = !isFlashOn
         scanObj?.changeTorch()
         
         if isFlashOn {
-            flashBtn.setImage(#imageLiteral(resourceName: "btn_enableTorch"), for: .normal)
+            flashBtn.setImage(#imageLiteral(resourceName: "lightopen"), for: .normal)
         } else {
-            flashBtn.setImage(#imageLiteral(resourceName: "btn_torch_disable"), for: .normal)
+            flashBtn.setImage(#imageLiteral(resourceName: "torch_close_icon"), for: .normal)
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        view.bringSubview(toFront: pannelView)
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
