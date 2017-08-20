@@ -790,6 +790,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="HAU-AM-daE"/>
                                         </constraints>
                                         <state key="normal" image="voiceopen"/>
+                                        <connections>
+                                            <action selector="voiceBtnClick:" destination="zyV-HJ-RgI" eventType="touchUpInside" id="J2z-Kn-dPX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -966,6 +969,7 @@
                     <connections>
                         <outlet property="countDownLabel" destination="n8m-HE-bgv" id="tT2-xQ-9vT"/>
                         <outlet property="torchBtn" destination="wSc-Kg-d62" id="iJG-nU-lJT"/>
+                        <outlet property="voiceBtn" destination="txl-au-5mw" id="3yb-5k-Xgj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zt-Z4-IZS" userLabel="First Responder" sceneMemberID="firstResponder"/>

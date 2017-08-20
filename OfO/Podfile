@@ -15,5 +15,6 @@ target 'OfO' do
  pod 'FTIndicator'
  pod 'APNumberPad'
  pod 'SwiftyTimer'
+ pod 'SwiftySound'
 
 end

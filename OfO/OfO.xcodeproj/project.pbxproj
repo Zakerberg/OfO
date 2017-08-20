@@ -55,6 +55,21 @@
 		4567CCFE1EFF82180075B31C /* LBXScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewStyle.swift; sourceTree = "<group>"; };
 		4567CCFF1EFF82180075B31C /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
 		4567CD071EFF85EE0075B31C /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		45878EAE1F4999E0007F8D22 /* 0_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0_D.m4a; sourceTree = "<group>"; };
+		45878EAF1F4999E0007F8D22 /* 1_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1_D.m4a; sourceTree = "<group>"; };
+		45878EB01F4999E0007F8D22 /* 2_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2_D.m4a; sourceTree = "<group>"; };
+		45878EB11F4999E0007F8D22 /* 3_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3_D.m4a; sourceTree = "<group>"; };
+		45878EB21F4999E0007F8D22 /* 4_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4_D.m4a; sourceTree = "<group>"; };
+		45878EB31F4999E0007F8D22 /* 5_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5_D.m4a; sourceTree = "<group>"; };
+		45878EB41F4999E0007F8D22 /* 6_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6_D.m4a; sourceTree = "<group>"; };
+		45878EB51F4999E0007F8D22 /* 7_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7_D.m4a; sourceTree = "<group>"; };
+		45878EB61F4999E0007F8D22 /* 8_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8_D.m4a; sourceTree = "<group>"; };
+		45878EB71F4999E0007F8D22 /* 9_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9_D.m4a; sourceTree = "<group>"; };
+		45878EB81F4999E0007F8D22 /* 上车前_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "上车前_D.m4a"; sourceTree = "<group>"; };
+		45878EB91F4999E0007F8D22 /* 上车前_LH.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "上车前_LH.m4a"; sourceTree = "<group>"; };
+		45878EBA1F4999E0007F8D22 /* 您的解锁码为_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "您的解锁码为_D.m4a"; sourceTree = "<group>"; };
+		45878EBB1F4999E0007F8D22 /* 骑行结束_D.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "骑行结束_D.m4a"; sourceTree = "<group>"; };
+		45878EBC1F4999E0007F8D22 /* 骑行结束_LH.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "骑行结束_LH.m4a"; sourceTree = "<group>"; };
 		45C6623F1F493A020008FF44 /* MJPassCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJPassCodeController.swift; sourceTree = "<group>"; };
 		4D8A0FED215680AAB71292AF /* Pods-OfO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.debug.xcconfig"; sourceTree = "<group>"; };
 		576768DEBB223CC7950C13F1 /* Pods-OfO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +91,7 @@
 		450106121EDBBF4500AA7A17 = {
 			isa = PBXGroup;
 			children = (
+				45878EAD1F4999E0007F8D22 /* Voice */,
 				4567CCF71EFF82090075B31C /* Lib */,
 				4501061D1EDBBF4500AA7A17 /* OfO */,
 				4501061C1EDBBF4500AA7A17 /* Products */,
@@ -144,6 +160,28 @@
 				4567CCFF1EFF82180075B31C /* LBXScanWrapper.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		45878EAD1F4999E0007F8D22 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				45878EAE1F4999E0007F8D22 /* 0_D.m4a */,
+				45878EAF1F4999E0007F8D22 /* 1_D.m4a */,
+				45878EB01F4999E0007F8D22 /* 2_D.m4a */,
+				45878EB11F4999E0007F8D22 /* 3_D.m4a */,
+				45878EB21F4999E0007F8D22 /* 4_D.m4a */,
+				45878EB31F4999E0007F8D22 /* 5_D.m4a */,
+				45878EB41F4999E0007F8D22 /* 6_D.m4a */,
+				45878EB51F4999E0007F8D22 /* 7_D.m4a */,
+				45878EB61F4999E0007F8D22 /* 8_D.m4a */,
+				45878EB71F4999E0007F8D22 /* 9_D.m4a */,
+				45878EB81F4999E0007F8D22 /* 上车前_D.m4a */,
+				45878EB91F4999E0007F8D22 /* 上车前_LH.m4a */,
+				45878EBA1F4999E0007F8D22 /* 您的解锁码为_D.m4a */,
+				45878EBB1F4999E0007F8D22 /* 骑行结束_D.m4a */,
+				45878EBC1F4999E0007F8D22 /* 骑行结束_LH.m4a */,
+			);
+			path = Voice;
 			sourceTree = "<group>";
 		};
 		9F6A08E60539C7C87870F865 /* Pods */ = {
