@@ -8,3 +8,4 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 
+#import <AVOSCloud/AVOSCloud.h>
