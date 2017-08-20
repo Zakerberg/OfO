@@ -12,6 +12,9 @@ import SwiftyTimer
 class MJPassCodeController: UIViewController {
     
     var remindSeconds = 120
+    var isTorchOn  = false
+    
+    @IBOutlet weak var torchBtn: UIButton!
     
     @IBOutlet weak var countDownLabel: UILabel!
     
@@ -28,11 +31,25 @@ class MJPassCodeController: UIViewController {
         }
     }
     
+    /// 报修按钮
     @IBAction func reportBtnClick(_ sender: UIButton) {
         
         
-        
     }
+    
+    /// 后置闪光灯
+    @IBAction func torchBtnClick(_ sender: UIButton) {
+        turnTorch()
+        
+        if isTorchOn {
+            torchBtn.setImage(#imageLiteral(resourceName: "btn_unenableTorch"), for: .normal)
+        }else{
+            torchBtn.setImage(#imageLiteral(resourceName: "btn_torch_disable"), for: .normal)
+        }
+        
+        isTorchOn = !isTorchOn
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
