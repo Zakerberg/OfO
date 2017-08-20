@@ -13,6 +13,7 @@ target 'OfO' do
  pod 'AMapSearch'
  pod 'AMapNavi'
  pod 'FTIndicator'
- pod 'APNumberPad' 
+ pod 'APNumberPad'
+ pod 'SwiftyTimer'
 
 end

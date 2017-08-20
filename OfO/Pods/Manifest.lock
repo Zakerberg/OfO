@@ -17,6 +17,7 @@ PODS:
   - FTIndicator/FTNotificationIndicator (1.1.6)
   - FTIndicator/FTProgressIndicator (1.1.6)
   - FTIndicator/FTToastIndicator (1.1.6)
+  - SwiftyTimer (2.0.0)
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - AMapSearch
   - APNumberPad
   - FTIndicator
+  - SwiftyTimer
   - SWRevealViewController
 
 SPEC CHECKSUMS:
@@ -36,8 +38,9 @@ SPEC CHECKSUMS:
   AMapSearch: 16a50b493ad419e8b6b81bafdeca7570db52f28e
   APNumberPad: a63526db2db628824ae92e7124719e87e0f1c969
   FTIndicator: c005c5787dbb6c40e0aa5af791e60ac1f164e3c0
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: 19335a6f9352bad90adc0d4f5e972cf423ace7dd
+PODFILE CHECKSUM: 4ced0adc567c637eb3860e6f38a78dcd347d7a73
 
 COCOAPODS: 1.1.1

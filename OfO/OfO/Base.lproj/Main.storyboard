@@ -744,10 +744,10 @@
             </objects>
             <point key="canvasLocation" x="-362" y="1416"/>
         </scene>
-        <!--View Controller-->
+        <!--Pass Code Controller-->
         <scene sceneID="XwM-Nw-fib">
             <objects>
-                <viewController id="zyV-HJ-RgI" sceneMemberID="viewController">
+                <viewController id="zyV-HJ-RgI" customClass="MJPassCodeController" customModule="OfO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uag-9g-sFq"/>
                         <viewControllerLayoutGuide type="bottom" id="xMB-5Q-eHm"/>
@@ -901,6 +901,46 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QnC-Ve-dpY">
+                                <rect key="frame" x="74.5" y="596.5" width="226.5" height="50.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9b9-4T-pGG">
+                                        <rect key="frame" x="0.0" y="0.0" width="226.5" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8m-HE-bgv">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="秒后开始计费,请检查车辆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRp-iV-FEz">
+                                                <rect key="frame" x="31" y="0.0" width="195.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDU-pK-GFs">
+                                        <rect key="frame" x="47.5" y="20.5" width="131.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如有问题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7E-CW-6Dh">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-Yz-B6a">
+                                                <rect key="frame" x="69.5" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="立即报修"/>
+                                                <connections>
+                                                    <action selector="reportBtnClick:" destination="zyV-HJ-RgI" eventType="touchUpInside" id="bYT-2I-U6U"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -913,15 +953,20 @@
                             <constraint firstItem="Ys9-u3-sQ9" firstAttribute="leading" secondItem="VDV-J8-2DT" secondAttribute="leading" id="Ms6-P5-3wF"/>
                             <constraint firstItem="HdI-m4-EKd" firstAttribute="centerX" secondItem="Ys9-u3-sQ9" secondAttribute="centerX" id="OWw-mk-Ja8"/>
                             <constraint firstItem="xMB-5Q-eHm" firstAttribute="top" secondItem="HdI-m4-EKd" secondAttribute="bottom" constant="336" id="cZY-8P-nS2"/>
+                            <constraint firstItem="xMB-5Q-eHm" firstAttribute="top" secondItem="QnC-Ve-dpY" secondAttribute="bottom" constant="20" id="oDy-x3-bti"/>
                             <constraint firstItem="cqv-DE-gti" firstAttribute="centerX" secondItem="VDV-J8-2DT" secondAttribute="centerX" id="oQa-Na-YBb"/>
                             <constraint firstItem="HdI-m4-EKd" firstAttribute="leading" secondItem="VDV-J8-2DT" secondAttribute="leadingMargin" constant="8" id="uXf-5m-MNv"/>
                             <constraint firstItem="HdI-m4-EKd" firstAttribute="top" secondItem="Ys9-u3-sQ9" secondAttribute="bottom" constant="20" id="vyS-s2-PCX"/>
+                            <constraint firstItem="QnC-Ve-dpY" firstAttribute="centerX" secondItem="VDV-J8-2DT" secondAttribute="centerX" id="xfA-5k-jju"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countDownLabel" destination="n8m-HE-bgv" id="tT2-xQ-9vT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zt-Z4-IZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2136.8000000000002" y="894.60269865067471"/>
+            <point key="canvasLocation" x="2094" y="831"/>
         </scene>
     </scenes>
     <resources>

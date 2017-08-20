@@ -27,6 +27,7 @@
 		4567CD051EFF82180075B31C /* LBXScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCFE1EFF82180075B31C /* LBXScanViewStyle.swift */; };
 		4567CD061EFF82180075B31C /* LBXScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567CCFF1EFF82180075B31C /* LBXScanWrapper.swift */; };
 		4567CD081EFF85EE0075B31C /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4567CD071EFF85EE0075B31C /* CodeScan.bundle */; };
+		45C662401F493A020008FF44 /* MJPassCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6623F1F493A020008FF44 /* MJPassCodeController.swift */; };
 		8A535E41D2A11E1E73F584E1 /* Pods_OfO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E96F4199968277270EC3DB /* Pods_OfO.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		4567CCFE1EFF82180075B31C /* LBXScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewStyle.swift; sourceTree = "<group>"; };
 		4567CCFF1EFF82180075B31C /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
 		4567CD071EFF85EE0075B31C /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		45C6623F1F493A020008FF44 /* MJPassCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJPassCodeController.swift; sourceTree = "<group>"; };
 		4D8A0FED215680AAB71292AF /* Pods-OfO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.debug.xcconfig"; sourceTree = "<group>"; };
 		576768DEBB223CC7950C13F1 /* Pods-OfO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfO.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfO/Pods-OfO.release.xcconfig"; sourceTree = "<group>"; };
 		70E96F4199968277270EC3DB /* Pods_OfO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 				450106351EDBFF5500AA7A17 /* MJMenuController.swift */,
 				4567CCF51EFF7B850075B31C /* MJScanViewController.swift */,
 				454068EC1F2C4E8800B0FA3C /* MJInputViewController.swift */,
+				45C6623F1F493A020008FF44 /* MJPassCodeController.swift */,
 				450106221EDBBF4500AA7A17 /* Main.storyboard */,
 				450106251EDBBF4500AA7A17 /* Assets.xcassets */,
 				450106271EDBBF4500AA7A17 /* LaunchScreen.storyboard */,
@@ -285,6 +288,7 @@
 			files = (
 				45307E6D1EDD948500FBC98E /* MyPinAnnotation.swift in Sources */,
 				4567CD051EFF82180075B31C /* LBXScanViewStyle.swift in Sources */,
+				45C662401F493A020008FF44 /* MJPassCodeController.swift in Sources */,
 				4567CD001EFF82180075B31C /* LBXPermissions.swift in Sources */,
 				450106211EDBBF4500AA7A17 /* ViewController.swift in Sources */,
 				450106361EDBFF5500AA7A17 /* MJMenuController.swift in Sources */,
