@@ -14,7 +14,7 @@ class MJPassCodeController: UIViewController {
     var Code = 0 //解锁码
     var remindSeconds = 120
     var isTorchOn = false
-    var isViiceOn = true
+    var isVoiceOn = true
     
     @IBOutlet weak var torchBtn: UIButton!
     @IBOutlet weak var voiceBtn: UIButton!
@@ -31,26 +31,22 @@ class MJPassCodeController: UIViewController {
                 timer.invalidate()
             }
         }
-        Sound.play(file: "骑行结束_LH.m4a")
+        
+        voiceBtnStatus(voiceBtn: voiceBtn)
     }
     
     /// 报修按钮
     @IBAction func reportBtnClick(_ sender: UIButton) {
         
+        dismiss(animated: true) {
         
+        }
     }
     
     /// 声音
     @IBAction func voiceBtnClick(_ sender: UIButton) {
         
-        if isViiceOn {
-            
-            voiceBtn.setImage(#imageLiteral(resourceName: "voiceclose"), for: .normal)
-        }else{
-            voiceBtn.setImage(#imageLiteral(resourceName: "voiceopen"), for: .normal)
-        }
-        
-        isViiceOn = !isViiceOn
+        isVoiceOn = !isVoiceOn
     }
     
     /// 后置闪光灯

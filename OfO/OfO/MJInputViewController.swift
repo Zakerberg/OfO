@@ -10,7 +10,7 @@ import UIKit
 import APNumberPad
 
 class MJInputViewController: UIViewController,APNumberPadDelegate,UITextFieldDelegate {
-
+    
     @IBOutlet weak var inputTF: UITextField!
     @IBOutlet weak var flashBtn: UIButton!
     @IBOutlet weak var voiceBtn: UIButton!
@@ -21,7 +21,7 @@ class MJInputViewController: UIViewController,APNumberPadDelegate,UITextFieldDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         inputTF.layer.borderColor = UIColor.OfO.cgColor
         inputTF.layer.borderWidth = 2
         title = "车辆解锁"
@@ -30,6 +30,9 @@ class MJInputViewController: UIViewController,APNumberPadDelegate,UITextFieldDel
         numerPad.leftFunctionButton.setTitle("确定", for: .normal)
         inputTF.inputView = numerPad
         inputTF.delegate = self
+        goBtn.isEnabled = false
+        
+        voiceBtnStatus(voiceBtn: voiceBtn)
     }
     
     //MARK: -- BtnClick
@@ -47,14 +50,20 @@ class MJInputViewController: UIViewController,APNumberPadDelegate,UITextFieldDel
     }
     
     @IBAction func goBtnClick(_ sender: UIButton) {
-        
-        
+
     }
-    
     
     //MARK: -- APNumberPadDelegate
     
     func numberPad(_ numberPad: APNumberPad, functionButtonAction functionButton: UIButton, textInput: UIResponder) {
+        
+        print("点击了确定!")
+        
+        if !inputTF.text!.isEmpty {
+            
+            performSegue(withIdentifier: "showCode", sender: self)
+        }
+        
     }
     
     //MARK: -- UITextFieldDelegate
@@ -70,9 +79,11 @@ class MJInputViewController: UIViewController,APNumberPadDelegate,UITextFieldDel
         if newLength > 0 {
             goBtn.setImage(#imageLiteral(resourceName: "nextArrow_enable"), for: .normal)
             goBtn.backgroundColor = UIColor.OfO
+            goBtn.isEnabled = true
         } else {
             goBtn.setImage(#imageLiteral(resourceName: "nextArrow_unenable"), for: .normal)
             goBtn.backgroundColor = UIColor.groupTableViewBackground
+            goBtn.isEnabled = false
         }
         
         return newLength <= 8

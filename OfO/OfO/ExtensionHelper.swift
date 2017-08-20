@@ -77,7 +77,16 @@ func turnTorch() {
     }
 }
 
-
+func voiceBtnStatus(voiceBtn: UIButton)  {
+    let defalults = UserDefaults.standard
+    
+    if defalults.bool(forKey: "isVoiceOn") {
+        
+        voiceBtn.setImage(#imageLiteral(resourceName: "voiceopen"), for: .normal)
+    }else{
+        voiceBtn.setImage(#imageLiteral(resourceName: "voiceclose"), for: .normal)
+    }
+}
 
 
 

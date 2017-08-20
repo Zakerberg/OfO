@@ -622,7 +622,7 @@
                                                 <state key="normal" image="nextArrow_unenable"/>
                                                 <connections>
                                                     <action selector="goBtnClick:" destination="B8a-yA-mgX" eventType="touchUpInside" id="4oh-md-TXT"/>
-                                                    <segue destination="zyV-HJ-RgI" kind="modal" modalTransitionStyle="flipHorizontal" id="yqK-8E-rXy"/>
+                                                    <segue destination="zyV-HJ-RgI" kind="modal" identifier="showCode" modalTransitionStyle="flipHorizontal" id="yqK-8E-rXy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
