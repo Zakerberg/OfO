@@ -148,7 +148,6 @@ class ViewController: UIViewController,MAMapViewDelegate,AMapSearchDelegate,AMap
         walkManager.calculateWalkRoute(withStart: [startPoint], end: [endPoint])
     }
     
-    
     /* (地图初始化完成) */
     func mapInitComplete(_ mapView: MAMapView!) {
         pin = MyPinAnnotation()
