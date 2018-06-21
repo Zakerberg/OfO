@@ -63,7 +63,6 @@ class MJInputViewController: UIViewController,APNumberPadDelegate,UITextFieldDel
             
             performSegue(withIdentifier: "showCode", sender: self)
         }
-        
     }
     
     //MARK: -- UITextFieldDelegate
